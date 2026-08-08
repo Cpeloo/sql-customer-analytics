@@ -39,14 +39,22 @@ erDiagram
         int quantity
         decimal unit_price
     }
+```
 
 ## 📊 Key Analytics Included
 
-### 1. RFM (Recency, Frequency, Monetary) Analysis
+### 1. RFM (Recency, Frequency, Monetary) Analysis (queries/01_rfm_analysis.sql)
 Categorizes customers into segments (Champions, At Risk, Lost, etc.) based on purchasing behavior to target retention campaigns.
 
-### 2. Cohort Retention Analysis
+### 2. Cohort Retention Analysis (queries/02_cohort_retention.sql)
 Tracks monthly customer retention rates over time using window functions to measure repeat purchase dynamics.
+
+### 3. Executive KPI Dashboard Queries (`queries/03_kpi_dashboard_queries.sql`)
+Designed to power executive BI dashboards (Power BI, Tableau, Metabase) with core business metrics and monthly trends:
+- **Core Sales Metrics:** Total Orders, Revenue, and Average Order Value (AOV).
+- **MoM Revenue Growth:** Calculates Month-over-Month growth rates using `LAG()` window functions.
+- **Category Share Analysis:** Evaluates revenue distribution across product categories using `SUM() OVER()` partition dynamics.
+- **Order Fulfillment Breakdown:** Monitors completion, cancellation, and return rates to identify potential operational bottlenecks.
 
 ## 🚀 How to Run
 1. Execute `schema.sql` to build tables.
